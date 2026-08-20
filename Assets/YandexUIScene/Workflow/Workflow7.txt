@@ -1,0 +1,7 @@
+新建一个脚本用于POST初始化服务器端的游戏会话
+
+目前只有当 `YandexLeaderboardManager.cs` 中的连接观测器真正输出 `[Leaderboard] Network state detected as Connected. Fetching immediately!` 状态时，增加一个方法调用初始化游戏会话的post ,打印 post的结果，保证每局游戏的初始化状态；
+格式：POST https://yandexa.bbtech.cc/api/machine/reset 
+ {
+  "machineId": "machine-1"
+}

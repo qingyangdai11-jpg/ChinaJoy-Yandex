@@ -1,0 +1,5 @@
+新建一个脚本，用于选择在线游戏模式 和 离线游戏模式；
+1.仿照SimpleUIManager 脚本;上下选择，默认为ONLINE;
+2. 使用 player pref 存储 当前游戏模式；默认 ONLINE; 选择不同的模式加载不同的场景 场景名字GameOFFLINE 和GameONLINE；
+3. 使用 菜单键 连续按3次 打开 选择游戏模式页面;打开后再按一次菜单键或者B键 关闭选择页面；只有再待机状态下才可以呼出；
+4. SceneReLoad 脚本同步修改

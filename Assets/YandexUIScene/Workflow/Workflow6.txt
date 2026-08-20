@@ -1,0 +1,6 @@
+新建一个脚本 用于游戏结束时候显示排行榜
+1.使用游戏结束收到的数据
+{"type":"game_result","data":{"leaderboard":[{"name":"yyy张小明","phone":"13812344443","score":230,"finished_time":"2026-07-02 13:47:36"},{"name":"张小明565","phone":"13812345689","score":180,"finished_time":"2026-07-02 12:12:13"},{"name":"张小明768","phone":"13812344466","score":180,"finished_time":"2026-07-02 13:57:43"},{"name":"yy","phone":"13812347876","score":180,"finished_time":"2026-07-02 14:27:08"},{"name":"张小2","phone":"13812344441","score":170,"finished_time":"2026-07-02 13:20:18"},{"name":"张小明768","phone":"13812345667","score":150,"finished_time":"2026-07-02 12:14:14"},{"name":"张小明8889","phone":"13812344567","score":140,"finished_time":"2026-07-02 12:11:17"},{"name":"张小明452","phone":"13812345611","score":120,"finished_time":"2026-07-02 14:34:20"},{"name":"张小1","phone":"13812345623","score":111,"finished_time":"2026-07-02 10:29:55"},{"name":"张小明","phone":"13812345678","score":95,"finished_time":"2026-07-01 10:25:07"}],"currentPlayer":{"name":"张小明452","phone":"13812345611","score":120,"rank":8,"finishedTime":"2026-07-02 14:34:20"}}}
+2.使用 YandexLeaderboardManager 的文本显示模式以及动态效果，
+3.只需要收到数据后调用一次
+4.如果 本次的成绩 在列表当中 ，将对应的 10个中的那一行的3个数据 文本显示标黄色（E1FA00）

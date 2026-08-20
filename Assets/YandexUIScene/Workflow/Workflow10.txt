@@ -1,0 +1,14 @@
+丰富游戏机制
+1.当连续碰撞10个coin时，额外+2分，且弹出弹窗coin10（碰撞到lightning，boost时不打断金币的连续碰撞，只有碰撞到任意barrier时会打断）
+当连续碰撞35个coin时，额外+10分，且弹出弹窗coin35（碰撞到lightning，boost时不打断金币的连续碰撞，只有碰撞到任意barrier时会打断）
+当连续碰撞50个coin时，此后每5个coin额外+2分，且弹出弹窗coin50（碰撞到lightning，boost时不打断金币的连续碰撞，只有碰撞到任意barrier时会打断）
+2.当连续30s未碰撞任意barrier时，分数+10分，弹出弹窗buff30
+   连续60s未碰撞任意barrier时，分数+25分,弹出弹窗buff60
+3.coin,lightning,boost,barrier随机生成的频率各不相同，每20个里面有1个lightning,1个boost，2个随机barrier，其余全是coin，数字全部暴露在inspector面板中，便于修改
+4.当碰撞到lightning时，20%概率立刻+5分，并弹出弹窗light1；15%概率5秒内碰撞所得到的积分x2倍，并弹出弹窗light2；15%概率立刻+10分，并弹出弹窗light3；20%概率立刻在附近生成15个coin，并弹出弹窗light4；15%概率3秒内碰撞所得到的积分x2倍，并弹出弹窗light5；15%概率持续三秒吸附自身小范围内的所有coin，并弹出弹窗light6
+数字全部暴露在inspector面板中，便于修改
+5，以上所有功能机制都要模块化，便于后期修改参数和替换人物和场景
+6.所用到的所有弹窗都在hierachy窗口中PopUp的Canvas下存放，所有道具都在props下存放，在assets的resources的prefabs下存放
+
+
+

@@ -1,0 +1,26 @@
+新建一个脚本，用于best.websockets 长连接服务器
+0. 全程的TMP文案用英文
+1.在游戏暂停/场景选择的时候，不管任何时候都保持通讯
+2. 获取本机的 机器码
+3.  连接到  wss://yandexa.bbtech.cc/ws?role=machine&machineId=machine-1  （本机的 机器码）
+4.  连接完成后 与服务器 保持长连接，发送心跳json { "type": "ping" } ,返回{ "type": "pong" }，10s 心跳检测一次。
+ 5.   当出现网络错误时候游戏内容暂停，将WSSCanvas 打开，Text (TMP) title打开 ，Text (TMP) (content)文案颜色白色显示错误内容，Text (TMP) (Reconnecting...)打开显示Reconnecting... (... 0.5s动态变换 0 1 2 3个点); 重连成功后 将WSSCanvas内容的Text (TMP) title 以及Text (TMP) (Reconnecting...)关闭，Text (TMP) (content)显示 连接成功， 并且颜色改为绿色；连接成功2秒后渐隐关闭界面，游戏继续；第一次游戏开始的时候开启WSSCanvas， Text (TMP) title 以及Text (TMP) (Reconnecting...)关闭，  Text (TMP) (content)显示 连接中，接收到 {"type":"connected"}后延迟1s，Text (TMP) (content)显示 连接成功， 并且颜色改为绿色；连接成功2秒后渐隐关闭界面， ,之后的在ONline模式下的重启场景不用在重启的时候出现;
+
+ 6. 当游戏状态在idle 状态接收到消息 {
+  "type": "start_game",
+  "data": {
+    "sessionId": "uuid-本次游戏的会话唯一ID",
+    "name": "玩家姓名",
+    "phone": "玩家手机号"
+  }
+}的时候开始游戏，保存 本次的data的数据；
+ 7. 当游戏状态切换到 game over page的时候，将本次游戏的得分以及sessionId以json格式 发给服务器{
+  "type": "game_score",
+  "data": {
+    "sessionId": "uuid-本次游戏的会话唯一ID",
+    "score": 95,
+    "machineMessage": {}
+  }
+}； 若是报错继续请求，请求上限3次；
+8. 打印服务器返回的消息
+9. GameFlowController增加本次游戏的得分的全局参数（默认0），增加是否开启调试模式（电脑的键盘pgup+10,pgdn-10）

@@ -1,0 +1,6 @@
+新建一个脚本，用于生成二维码
+1.参考脚本CreateQRcore
+2. 公开设置刷新频率，默认120s刷新一次（重新生成新的码）
+3. 生成白底的二维码到目标RawImage，生成二维码的内容https://yandexa.bbtech.cc?time=20260702111832&id=machine-1
+；其中time 为 当前时间
+；id为本机的机器码

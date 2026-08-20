@@ -1,0 +1,9 @@
+改游戏机制
+1.从原来随机生成红色小方块作为敌人改为
+随机从prefabs里的coin,lighting,boost,barrier1,barrier2,barrier3,barrier4中随机出现在场景中
+2.当player碰撞后消失并分别加对应的分数，coin+1，lighting+5，boost提升角色移动速度2s，barrier1-2分,barrier2-2分,barrier3-2分,barrier4-2分
+3，连续碰撞五个coin后弹出弹窗coin10，碰撞到lighting，boost,lighting,barrier1-4时分别弹出对应的弹窗lighitng,boost,barrier
+4，持续在场景中随机生成prefabs中的内容
+5，要求每个功能模块化，便于后期修改替换道具和角色修改机制等等
+6，累加的分数依旧和之前一样传入score，传入score的功能和之前一样不变
+7，可以给每种道具添加对应的标签，用于检测角色碰撞到的哪种并实现相应的功能
